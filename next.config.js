@@ -1,3 +1,5 @@
 module.exports = {
-	images: ["www.google.com"],
+	images: {
+		domains: ["www.google.com"],
+	},
 };
