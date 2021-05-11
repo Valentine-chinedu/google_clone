@@ -1,4 +1,4 @@
-function Footer() {
+function footer() {
 	return (
 		<div>
 			<footer className="flex flex-col justify-center bg-gray-100 h-auto z-40">
@@ -68,4 +68,4 @@ function Footer() {
 	);
 }
 
-export default Footer;
+export default footer;

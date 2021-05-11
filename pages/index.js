@@ -1,9 +1,12 @@
 import Head from "next/head";
-import { BsGrid3X3Gap } from "react-icons/bs";
-import { MdSearch } from "react-icons/md";
-import { IoMdClose } from "react-icons/io";
+import dynamic from "next/dynamic";
+// import { MdSearch } from "react-icons/md";
+// import { IoMdClose } from "react-icons/io";
 
-import Image from "next/image";
+const Header = dynamic(() => import("../components/header"));
+const Settings = dynamic(() => import("../components/settings"));
+const Body = dynamic(() => import("../components/body"));
+const Footer = dynamic(() => import("../components/footer"));
 
 export default function Home() {
 	return (
@@ -15,167 +18,16 @@ export default function Home() {
 			</Head>
 
 			{/* header */}
-			<header className="flex justify-end items-center space-x-9 m-5 ">
-				<div className="flex items-center lg:space-x-4 lg:text-base lg:font-normal lg:text-gray-700">
-					<a href="">Gmail</a>
-					<a href="">Images</a>
-				</div>
-				<div className="flex items-center space-x-7">
-					<button>
-						<BsGrid3X3Gap className="text-2xl text-gray-500" />
-					</button>
-
-					{/* Avatar */}
-					<img
-						loading="lazy"
-						className="h-9 w-9 rounded-full object-cover"
-						src="/person-1.jpeg"
-						alt="avatar"
-					/>
-				</div>
-			</header>
+			<Header />
 
 			{/* body */}
 
-			<div className="relative flex flex-col justify-center items-center space-y-10 bottom-16">
-				<div className="flex justify-center ">
-					<Image
-						src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
-						alt="google image"
-						width={315}
-						height={115}
-					/>
-				</div>
+			<Body />
 
-				<form className=" flex justify-between items-center border border-gray-200 rounded-full px-5 py-2 h-16 w-5/12 hover:shadow-md focus-within:shadow-md">
-					<MdSearch className="text-2xl text-gray-400 mr-2" />
-
-					<input
-						className=" w-100 text-xl text-gray-700 focus:outline-none mr-2"
-						type="text"
-					/>
-
-					<IoMdClose
-						className="text-5xl h-9 text-gray-500 flex items-center -mr-1
-						 pr-4 border-r"
-					/>
-
-					<svg
-						className="h-7"
-						focusable="false"
-						viewBox="0 0 24 24"
-						xmlns="http://www.w3.org/2000/svg"
-					>
-						<path
-							d="m12 15c1.66 0 3-1.31 3-2.97v-7.02c0-1.66-1.34-3.01-3-3.01s-3 1.34-3 3.01v7.02c0 1.66 1.34 2.97 3 2.97z"
-							fill="#4285f4"
-						></path>
-						<path d="m11 18.08h2v3.92h-2z" fill="#34a853"></path>
-						<path
-							d="m7.05 16.87c-1.27-1.33-2.05-2.83-2.05-4.87h2c0 1.45 0.56 2.42 1.47 3.38v0.32l-1.15 1.18z"
-							fill="#f4b400"
-						></path>
-						<path
-							d="m12 16.93a4.97 5.25 0 0 1 -3.54 -1.55l-1.41 1.49c1.26 1.34 3.02 2.13 4.95 2.13 3.87 0 6.99-2.92 6.99-7h-1.99c0 2.92-2.24 4.93-5 4.93z"
-							fill="#ea4335"
-						></path>
-					</svg>
-				</form>
-
-				<span className="flex space-x-4 p-4">
-					<button className="bg-gray-100 text-gray-600 py-1.5 px-5 rounded-lg hover:bg-gray-200 text-md">
-						Google Search
-					</button>
-					<button
-						className="bg-gray-100 text-gray-600 py-1.5 px-5 rounded-lg hover:bg-gray-200 text-md"
-						href=""
-					>
-						I'm Feeling Lucky
-					</button>
-				</span>
-				<div className=" top-18 space-x-3">
-					<span className="text-md">Google offered in:</span>
-					<span className="text-blue-800">Hausa</span>
-					<span className="text-blue-800">Igbo</span>
-					<span className="text-blue-800">Ede Yoruba</span>
-					<span className="text-blue-800">Nigerian</span>
-					<span className="text-blue-800">Pidgin</span>
-				</div>
-			</div>
-
-			<div className=" absolute right-6 bottom-14 z-50 flex flex-col items-start space-y-8 text-gray-500 text-lg bg-gray-50 p-4 border-2 border-gray-400 w-52">
-				<a href="">Search settings</a>
-				<a href="">Advanced search</a>
-				<a href="">Your data in search</a>
-				<a href="">Search history</a>
-				<a href="">Search help</a>
-				<a href="">Send feedback</a>
-			</div>
+			<Settings />
 
 			{/* footer */}
-			<footer className="flex flex-col justify-center bg-gray-100 h-auto z-40">
-				<div className=" flex items-center border-b w-full text-lg text-gray-500 pl-10 h-14">
-					<h3>Nigeria</h3>
-				</div>
-
-				<div className="flex items-center justify-between h-14 w-full px-10 text-gray-500 text-lg">
-					<div className="space-x-10">
-						<a
-							className=" hover:border-b border-gray-500"
-							href="https://about.google/?utm_source=google-NG&utm_medium=referral&utm_campaign=hp-footer&fg=1"
-						>
-							About
-						</a>
-						<a
-							className=" hover:border-b border-gray-500"
-							href="https://www.google.com/intl/en_ng/ads/?subid=ww-ww-et-g-awa-a-g_hpafoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpafooter&fg=1"
-						>
-							Advertising
-						</a>
-						<a
-							className=" hover:border-b border-gray-500"
-							href="https://www.google.com/services/?subid=ww-ww-et-g-awa-a-g_hpbfoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpbfooter&fg=1"
-						>
-							Business
-						</a>
-						<a
-							className=" hover:border-b border-gray-500"
-							href="https://google.com/search/howsearchworks/?fg=1"
-						>
-							How Search works
-						</a>
-					</div>
-					<div className="flex space-x-2 relative right-24 text-gray-500">
-						<img
-							className="h-5"
-							loading="lazy"
-							src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAYCAMAAAAiV0Z6AAAAPFBMVEVLoEN0wU6CzFKCzFKCzFKCzFKCzFJSo0MSczNDmkCCzFJPoUMTczNdr0gmgziCzFITczMTczMTczMTczPh00jOAAAAFHRSTlPF/+bIsms8Ad///hX+//5/tXw7aMEAx10AAACaSURBVHgBbc4HDoRQCATQ33tbvf9dF9QxaCT9UQaltLHOh/golXKhMs5Xqa0xU1lyoa2fXFyQOsDG38qsLy4TaV+sFislovyhPzLJJrBu6eQOtpW0LjbJkzTuTDLRVNKa3uxJI+VdiRqXSeu6GW+Qxi29eLIi8H7EsYrT42BD+mQtNO5JMjRuC4lSY8V4hsLX0egGijvUSEP9AbylEsOkeCgWAAAAAElFTkSuQmCC"
-							alt="green leave"
-						/>
-						<a
-							className=" hover:border-b border-gray-500"
-							href="https://sustainability.google/commitments/?utm_source=googlehpfooter&utm_medium=housepromos&utm_campaign=bottom-footer&utm_content="
-						>
-							Carbon neutral since 2007
-						</a>
-					</div>
-					<div className="space-x-10 text-gray-500">
-						<a
-							className=" hover:border-b border-gray-500"
-							href="https://policies.google.com/privacy?hl=en-NG&fg=1"
-						>
-							Privacy
-						</a>
-						<a
-							className=" hover:border-b border-gray-500"
-							href="https://policies.google.com/terms?hl=en-NG&fg=1"
-						>
-							Terms
-						</a>
-						<button>Settings</button>
-					</div>
-				</div>
-			</footer>
+			<Footer />
 		</div>
 	);
 }
