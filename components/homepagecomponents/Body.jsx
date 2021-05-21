@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import { useRouter } from "next/router";
 
-function body() {
+function Body() {
 	const router = useRouter();
 	const searchInputRef = useRef(null);
 
@@ -90,4 +90,4 @@ function body() {
 	);
 }
 
-export default body;
+export default Body;

@@ -1,6 +1,6 @@
 import { BsGrid3X3Gap } from "react-icons/bs";
 
-function header() {
+function Header() {
 	return (
 		<div>
 			<header className="flex justify-end items-center space-x-9 m-5 ">
@@ -26,4 +26,4 @@ function header() {
 	);
 }
 
-export default header;
+export default Header;
