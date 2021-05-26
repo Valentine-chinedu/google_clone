@@ -10,7 +10,7 @@ const SearchResults = ({ results }) => {
 	console.log(results.items);
 
 	return (
-		<div className="w-full pl-52">
+		<div className="w-full pl-52 pt-4">
 			<p className="text-gray-600 text-md mb-5 mt-3">
 				About {results.searchInformation?.formattedTotalResults} results (
 				{results.searchInformation?.formattedSearchTime} seconds)

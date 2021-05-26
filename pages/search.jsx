@@ -36,7 +36,7 @@ const search = ({ results }) => {
 
 			{/* header */}
 
-			<header className=" bg-white z-50 w-full">
+			<header className=" bg-white z-50 w-full  fixed">
 				<div className="flex justify-between p-8 ">
 					<div className="flex items-center space-x-10 w-full mr-[45rem]">
 						<div className="flex flex-shrink-0 items-center h-full cursor-pointer">
