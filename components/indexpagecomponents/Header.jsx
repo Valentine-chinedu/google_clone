@@ -3,7 +3,7 @@ import { BsGrid3X3Gap } from "react-icons/bs";
 function Header() {
 	return (
 		<div>
-			<header className="flex justify-end items-center space-x-9 m-5 ">
+			<header className="flex justify-end items-center space-x-9 m-5 flex-shrink-0">
 				<div className="flex items-center lg:space-x-4 lg:text-base lg:font-normal lg:text-gray-700">
 					<a href="">Gmail</a>
 					<a href="">Images</a>

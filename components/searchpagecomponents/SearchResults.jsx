@@ -10,7 +10,7 @@ const SearchResults = ({ results }) => {
 	console.log(results.items);
 
 	return (
-		<div className="mx-auto w-full px-3 pl-[5%] md:pl-[14%]">
+		<div className="w-full pl-52">
 			<p className="text-gray-600 text-md mb-5 mt-3">
 				About {results.searchInformation?.formattedTotalResults} results (
 				{results.searchInformation?.formattedSearchTime} seconds)
@@ -20,9 +20,11 @@ const SearchResults = ({ results }) => {
 				return (
 					<div key={result.link} className="max-w-xl mb-8">
 						<div className="group">
-							<a href={result.link}>{result.formattedUrl}</a>
+							<a className="text-xl" href={result.link}>
+								{result.formattedUrl}
+							</a>
 							<a href={result.link}>
-								<h2 className="truncate text-xl text-blue-800 font-medium group-hover:underline">
+								<h2 className="truncate text-2xl text-blue-900 font-medium group-hover:underline mt-2 active:placeholder-indigo-800">
 									{result.title}
 								</h2>
 							</a>
@@ -35,12 +37,12 @@ const SearchResults = ({ results }) => {
 
 			{/* pagination */}
 
-			<div className="flex justify-between text-blue-700 mb-10">
+			<div className="flex text-blue-700 mb-10 pl-9 space-x-72">
 				{startIndex >= 10 && (
 					<Link
 						href={`/search?term=${router.query.term}&start=${startIndex - 10}`}
 					>
-						<div className="flex flex-grow flex-col items-center cursor-pointer hover:underline">
+						<div className="flex  flex-col items-center cursor-pointer hover:underline">
 							<MdKeyboardArrowLeft className="h-5" />
 							<p>Previous</p>
 						</div>
@@ -50,7 +52,7 @@ const SearchResults = ({ results }) => {
 				<Link
 					href={`/search?term=${router.query.term}&start=${startIndex + 10}`}
 				>
-					<div className="flex flex-grow flex-col items-center cursor-pointer hover:underline">
+					<div className="flex flex-col items-center cursor-pointer hover:underline">
 						<MdKeyboardArrowRight className="h-5" />
 						<p>Next</p>
 					</div>

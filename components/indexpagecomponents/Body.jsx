@@ -1,5 +1,4 @@
 import { MdSearch } from "react-icons/md";
-import { IoMdClose } from "react-icons/io";
 
 import Image from "next/image";
 import { useRef } from "react";
@@ -17,6 +16,7 @@ function Body() {
 
 		router.push(`/search?term=${term}`);
 	};
+
 	return (
 		<div className="relative flex flex-col justify-center items-center space-y-10 bottom-12">
 			<div className="flex justify-center ">
@@ -28,18 +28,16 @@ function Body() {
 				/>
 			</div>
 
-			<form className=" flex justify-between items-center border border-gray-200 rounded-full px-5 py-2 h-16 w-5/12 hover:shadow-md focus-within:shadow-md">
+			<form
+				onSubmit={search}
+				className=" flex justify-between items-center border border-gray-300 rounded-full px-5 py-2 h-[3.5rem] min-w-[48rem] max-w-[48rem] hover:shadow-md focus-within:shadow-md"
+			>
 				<MdSearch className="text-2xl text-gray-400 mr-2" />
 
 				<input
 					ref={searchInputRef}
-					className=" w-100 text-xl text-gray-700 focus:outline-none mr-2"
+					className=" w-[40rem] text-xl text-gray-700 focus:outline-none mr-2"
 					type="text"
-				/>
-
-				<IoMdClose
-					className="text-5xl h-9 text-gray-500 flex items-center -mr-1
-						 pr-4 border-r"
 				/>
 
 				<svg
