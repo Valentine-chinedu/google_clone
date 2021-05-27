@@ -13,8 +13,6 @@ const API_KEY = process.env.API_KEY;
 const CONTEXT_KEY = process.env.CONTEXT_KEY;
 
 const search = ({ results }) => {
-	console.log(results);
-
 	const router = useRouter();
 	const searchInputRef = useRef(null);
 
@@ -56,6 +54,7 @@ const search = ({ results }) => {
 								ref={searchInputRef}
 								className="flex flex-grow max-w-2xl text-xl text-gray-700 focus:outline-none h-full"
 								type="text"
+								defaultValue={router.query.term}
 							/>
 							<div
 								className="cursor-pointer h-9 text-gray-500 flex items-center
@@ -117,7 +116,7 @@ const search = ({ results }) => {
 };
 
 export async function getServerSideProps(context) {
-	const useDummyDAta = true;
+	const useDummyDAta = false;
 	const startIndex = context.query.start || "0";
 
 	// Fetch data from external API
