@@ -6,7 +6,7 @@ import Footer from "../components/indexpagecomponents/Footer";
 
 export default function Home() {
 	return (
-		<div className="flex flex-col justify-between h-screen w-full font-sans overflow-x-scroll">
+		<div className="flex flex-col justify-between h-screen font-sans">
 			<Head>
 				<title>Google clone</title>
 				<link rel="icon" href="/favicon.ico" />

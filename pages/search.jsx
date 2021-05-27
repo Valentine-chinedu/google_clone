@@ -26,7 +26,7 @@ const search = ({ results }) => {
 	};
 
 	return (
-		<div className="font-serif">
+		<div className="font-sans">
 			<Head>
 				<title>{router.query.term} - Google Search</title>
 				<link rel="icon" href="/favicon.ico" />

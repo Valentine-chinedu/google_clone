@@ -1,7 +1,7 @@
 function Footer() {
 	return (
 		<div>
-			<footer className="flex flex-col justify-center bg-gray-100 h-auto z-40">
+			<footer className="flex flex-col justify-center bg-gray-100 h-auto">
 				<div className=" flex items-center border-b w-full text-lg text-gray-500 pl-10 h-14">
 					<h3>Nigeria</h3>
 				</div>
